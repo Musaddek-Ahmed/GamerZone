@@ -3,6 +3,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/all'
+import AnimatedTitle from './animatedTitle'
 gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
@@ -30,9 +31,9 @@ const About = () => {
         <div className='relative mb-8 mt-36 flex flex-col items-center gap-5'>
             <h2 className='font-general text-sm uppercase md:text-[10px]'>Welcome to Zentry</h2>
 
-            <div className='mt-5 text-center text-4xl uppercase leading-[0.8] md:text-[6rem]'>
-                Disc<b>o</b>ver the world's <br /> l<b>a</b>rgest shared adventure
-                
+
+                <AnimatedTitle title="Disc<b>o</b>ver the world's <br/> l<b>a</b>rgest shared adventure" containerClass="mt-5 !text-black text-center"/>
+
 
                 <div className='about-subtext'>
                     <p>
@@ -42,15 +43,22 @@ const About = () => {
                         Zentry unites every player from countless games and platforms
                     </p>
                 </div>
-            </div>
+        </div>
 
             <div className='h-dvh w-screen' id='clip'>
                 <div className='mask-clip-path about-image'>
-                    <Image src="/img/about.webp" alt='Background' width={800} height={800} className='absolute left-0 top-0 size-full object-cover'/>
+                <Image
+                    src="/img/about.webp"
+                    alt="Background"
+                    width={800}
+                    height={600}
+                    className="absolute left-0 top-0 w-full h-full object-cover"
+                    loading="lazy"
+                    />
                     
                 </div>
             </div>
-        </div>
+        
     </div>
   )
 }

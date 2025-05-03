@@ -6,6 +6,8 @@ import About from "./components/about";
 import Navbar from "./components/navbar";
 import Features from "./components/features";
 import Story from "./components/story";
+import Contact from "./components/contact";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <About/>
       <Features/>
       <Story/>
+      <Contact/>
+      <Footer/>
     </main>
   );
 }
